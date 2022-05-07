@@ -28,10 +28,6 @@ public class Role implements Serializable{
     @Column( name = "role_name" )
     private String roleName;
 
-    //bi-directional many-to-many association to User
-    @ManyToMany( mappedBy = "roles" )
-    private List<User> users;
-
     /**
      * Constructors
      */
@@ -58,14 +54,6 @@ public class Role implements Serializable{
 
     public void setRoleName( String roleName ){
         this.roleName = roleName;
-    }
-
-    public List<User> getUsers( ){
-        return this.users;
-    }
-
-    public void setUsers( List<User> users ){
-        this.users = users;
     }
 
     /**
